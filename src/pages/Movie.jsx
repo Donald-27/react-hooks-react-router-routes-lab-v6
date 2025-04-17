@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
-function Movie() {
+function Movie({ title, genres, poster, minutes, id }) {
   return (
-    <>
-      <header>
-        {/* What component should go here? */}
-      </header>
-      <main>
-        {/* Movie info here! */}
-      </main>
-    </>
+    <article>
+      <h2>{title}</h2>
+      <img src={poster} alt={title} />
+      <p>{minutes} minutes</p>
+      <div>
+        {genres.map((genre) => (
+          <span key={genre}>{genre}</span>
+        ))}
+      </div>
+    </article>
   );
-};
+}
 
 export default Movie;
